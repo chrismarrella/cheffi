@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.time.Period;
 
 @Entity
-@Table(name = "\"user\"")
+@Table(name = "\"cheffi\"")
 public class User {
     @Id
     @SequenceGenerator(
@@ -19,21 +19,32 @@ public class User {
             generator = "user_sequence"
     )
     private Long id;
+    private String username;
     private String firstname;
     private String lastname;
 
     public User() {
     }
 
-    public User(Long id, String firstname, String lastname) {
+    public User(Long id, String username, String firstname, String lastname) {
         this.id = id;
+        this.username = username;
         this.firstname = firstname;
         this.lastname = lastname;
     }
 
-    public User(String firstname, String lastname) {
+    public User(String username, String firstname, String lastname) {
+        this.username = username;
         this.firstname = firstname;
         this.lastname = lastname;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Long getId() {
@@ -64,6 +75,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
+                ", username='" + username + '\'' +
                 ", first name='" + firstname + '\'' +
                 ", last name='" + lastname + '\'' +
                 '}';
