@@ -26,9 +26,9 @@ public class UserService {
 
     public void addNewUser(User user) {
         Optional<User> userOptional = userRepository
-                .findUserByLastname(user.getLastname());
+                .findUserByUsername(user.getUsername());
         if (userOptional.isPresent()) {
-            throw new IllegalStateException("lastname taken");
+            throw new IllegalStateException("username taken");
         }
         userRepository.save(user);
     }
@@ -45,7 +45,7 @@ public class UserService {
     }
 
     @Transactional
-    public void updateUser(Long userId, String firstname, String lastname) {
+    public void updateUser(Long userId, String username, String firstname, String lastname) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new IllegalStateException(
                         "User with id " + userId + " does not exist"
@@ -61,6 +61,18 @@ public class UserService {
                 !lastname.isEmpty() &&
                 !user.getLastname().equals(lastname)) {
             user.setLastname(lastname);
+        }
+
+
+        if (username != null &&
+                !username.isEmpty() &&
+                !user.getUsername().equals(username)) {
+            Optional<User> studentOptional = userRepository
+                    .findUserByUsername(username);
+            if (studentOptional.isPresent()) {
+                throw new IllegalStateException("username taken");
+            }
+            user.setUsername(username);
         }
     }
 }

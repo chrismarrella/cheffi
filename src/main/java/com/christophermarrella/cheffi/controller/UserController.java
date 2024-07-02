@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/student")
+@RequestMapping(path = "api/v1/user")
 public class UserController {
 
     private final UserService userService;
@@ -36,9 +36,10 @@ public class UserController {
     @PutMapping(path = "{userId}")
     public void updateUser(
             @PathVariable("userId") Long userId,
+            @RequestParam(required = false) String username,
             @RequestParam(required = false) String firstname,
             @RequestParam(required = false) String lastname) {
-        userService.updateUser(userId, firstname, lastname);
+        userService.updateUser(userId, username, firstname, lastname);
     }
 
 
