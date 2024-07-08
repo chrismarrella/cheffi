@@ -1,6 +1,6 @@
 package com.christophermarrella.cheffi.service;
 
-import com.christophermarrella.cheffi.model.User;
+import com.christophermarrella.cheffi.entities.User;
 import com.christophermarrella.cheffi.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;

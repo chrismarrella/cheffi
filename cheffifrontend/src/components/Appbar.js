@@ -7,6 +7,8 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from './cheffilogo.png';
+import { Link } from 'react-router-dom';
+
 
 
 export default function Appbar() {
@@ -27,7 +29,9 @@ export default function Appbar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             CHEFFI
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button component={Link} to="/login" color="inherit">Login</Button>
+          <Button component={Link} to="/user" color="inherit">Sign Up</Button>
+
         </Toolbar>
       </AppBar>
     </Box>
