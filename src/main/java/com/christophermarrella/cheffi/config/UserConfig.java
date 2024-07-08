@@ -1,12 +1,11 @@
 package com.christophermarrella.cheffi.config;
 
-import com.christophermarrella.cheffi.model.User;
+import com.christophermarrella.cheffi.entities.User;
 import com.christophermarrella.cheffi.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.time.LocalDate;
 import java.util.List;
 
 
@@ -18,9 +17,9 @@ public class UserConfig {
             UserRepository repository) {
         return args -> {
             User christopher = new User(1L,
-                    "christophermarrella",
-                    "Christopher",
-                    "Marrella"
+                    "admin",
+                    "admin",
+                    "admin"
             );
             User john = new User(2L,
                     "johndoe123",

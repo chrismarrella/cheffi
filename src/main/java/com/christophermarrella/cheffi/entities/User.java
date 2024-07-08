@@ -1,9 +1,7 @@
-package com.christophermarrella.cheffi.model;
+package com.christophermarrella.cheffi.entities;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDate;
-import java.time.Period;
 
 @Entity
 @Table(name = "\"cheffi\"")
