@@ -5,12 +5,6 @@ import {Paper, Button, TextField} from '@mui/material';
 
 export default function MainMenu() {
     const paperStyle = { padding: '50px 20px', width: 800, margin: "20px auto" }
-    const[username, setUsername] = React.useState('')
-    const[firstname, setFirstname] = React.useState('')
-    const[lastname, setLastname] = React.useState('')
-    const[user, setUser] = React.useState([])
-    const [error, setError] = React.useState(false);
-    const[helperText, setHelperText] = React.useState('')
 
 
   return (

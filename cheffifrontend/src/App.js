@@ -6,6 +6,8 @@ import User from './components/User';
 import Login from './components/Login';
 import MainMenu from './components/MainMenu';
 import LoggedIn from './components/LoggedIn';
+import InventoryView from './components/InventoryView';
+import DietaryRestrictionsView from './components/DietaryRestrictionsView';
 
 
 function App() {
@@ -15,9 +17,11 @@ function App() {
         <Appbar />
         <Routes>
           <Route index element={<MainMenu />} />
-          <Route path="/login" element={<Login />} />  {/* Pass setUsername prop */}
+          <Route path="/login" element={<Login />} /> 
           <Route path="/user" element={<User />} />
-          <Route path="/loggedin" element={<LoggedIn />} /> {/* Pass username from state */}
+          <Route path="/loggedin" element={<LoggedIn />} />
+          <Route path="/inventoryview" element={<InventoryView />} />
+          <Route path="/dietaryrestrictionsview" element={<DietaryRestrictionsView />} />
         </Routes>
       </BrowserRouter>
     </div>
