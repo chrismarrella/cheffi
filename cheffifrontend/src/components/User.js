@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import {Paper, Button, TextField} from '@mui/material';
 import FormHelperText from '@mui/material/FormHelperText';
 
-
 export default function User() {
     const paperStyle = { padding: '50px 20px', width: 800, margin: "20px auto" }
     const[username, setUsername] = React.useState('')
@@ -20,6 +19,7 @@ export default function User() {
     const handleClick = (e) => {
         e.preventDefault()
         const user={username, firstname, lastname}
+        console.log(JSON.stringify(user))
         console.log(user)
         fetch("http://localhost:8080/api/v1/user", {
           method: 'POST',
@@ -39,6 +39,7 @@ export default function User() {
             setHelperText('Username Taken!');
           });
       };
+
 
 useEffect(() => {
   fetch("http://localhost:8080/api/v1/user")

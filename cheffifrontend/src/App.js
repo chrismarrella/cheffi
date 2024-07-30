@@ -8,6 +8,7 @@ import MainMenu from './components/MainMenu';
 import LoggedIn from './components/LoggedIn';
 import InventoryView from './components/InventoryView';
 import DietaryRestrictionsView from './components/DietaryRestrictionsView';
+import GetRecipes from './components/GetRecipes';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/loggedin" element={<LoggedIn />} />
           <Route path="/inventoryview" element={<InventoryView />} />
           <Route path="/dietaryrestrictionsview" element={<DietaryRestrictionsView />} />
+          <Route path="/getrecipes" element={<GetRecipes />} />
         </Routes>
       </BrowserRouter>
     </div>

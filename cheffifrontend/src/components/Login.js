@@ -19,7 +19,7 @@ export default function Login() {
       console.log('Logged in As', username);
       setHelperText('');
       setUsername(username);
-      navigate('/loggedin', { state: { username } }); // Pass username in state (unchanged)
+      navigate('/loggedin', { state: { username } }); 
     } else {
       setHelperText('User does not exist');
     }
