@@ -101,12 +101,12 @@ public class UserService {
         UserInventory userInventory = user.getInventory();
         String removeItem = foodItemRequest.getRemoveItem();
 
-
         if (removeItem != null && removeItem.equals("True")) {
             DeleteFoodItem.deleteFoodItem(userInventory, foodItemRequest);
         } else {
             AddFoodItem.addFoodItem(userInventory, foodItemRequest);
         }
+        userRepository.save(user);
 
     }
 
